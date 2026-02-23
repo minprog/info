@@ -36,11 +36,10 @@
             </li>
             
             <h3>Aanmelding minor</h3>
-            <p><strong>De centrale minoraanmelding is inmiddels gesloten. We accepteren wel nog late aanmeldingen voor het tweede semester van dit studiejaar via het onderstaande formulier.</strong></p>
-            <!--
+            <!--<p><strong>De centrale minoraanmelding is inmiddels gesloten. We accepteren wel nog late aanmeldingen voor het tweede semester van dit studiejaar via het onderstaande formulier.</strong></p>-->
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
-                    Meld je tussen <b>13 oktober en 7 november 2025</b> aan voor &eacute;&eacute;n
+                    Meld je tussen <b>1 april en 6 mei</b> aan voor &eacute;&eacute;n
                     of meer minoren via het aanmeldingsformulier. In verband met beperkte plekken voor het volledige programma vindt er selectie plaats op basis van voorkennis (niet al te veel), interesse en toewijding.
                 </p>
                 <p class="">
@@ -55,10 +54,10 @@
                     meedoet met de eerste selectie als je dit formulier niet op tijd invult.
                 </p>
                 <p class="">
-                    <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/Pages/ResponsePage.aspx?id=zcrxoIxhA0S5RXb7PWh05ZTDc7biyulCvpu4U-tarWtUQzE4VEw4MjdDUE4wWk1VTkdKTUM4UEtDVi4u" target="_blank"> Selectieformulier Minor AI</a>
+                    <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/Pages/ResponsePage.aspx?id=zcrxoIxhA0S5RXb7PWh05ZTDc7biyulCvpu4U-tarWtUMDMwTkc4VlU0NUtaQlVJRjM4TEdYVzRaNi4u" target="_blank"> Selectieformulier Minor AI</a>
                 </p>
             </li>
-            -->
+            <!--
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
                     Vul het onderstaande formulier in om de selectieprocedure voor het tweede semester van dit studiejaar te starten. Wij accepteren hier nog aanmeldingen zolang we plaatsen beschikbaar hebben.
@@ -67,6 +66,7 @@
                     <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/e/ZFH9bEpUXW" target="_blank"> Selectieformulier Minor AI</a>
                 </p>
             </li>
+            -->
             <li class="mt-3">
                 <p class="mb-5" style="font-size:1.2rem;">
                     Hou je studentenmail in de gaten voor het geval wij vragen hebben, 
@@ -79,7 +79,7 @@
             <li class="mt-3">
                 <p style="font-size:1.2rem;">
                     Als je geselecteerd bent, kun je je definitief inschrijven voor de minorvakken.
-                    Dit kan tijdens de normale vakinschrijving van de UvA <strong>vanaf 1 tot 8 december 13:00</strong>. Dit gaat via het systeem GLASS.
+                    Dit kan tijdens de normale vakinschrijving van de UvA <strong>vanaf 8 tot 15 juni 13:00</strong>. Dit gaat via het systeem GLASS.
                 </p>
                 <p class="">
                     <a class="btn btn-outline-dark btn-lg" href="https://glass.uva.nl/" target="_blank">Ga naar GLASS om je inschrijvingen te beheren</a>
@@ -87,22 +87,20 @@
             </li>
             <li class="mt-3">
                 <p class="mb-5" style="font-size:1.2rem;">
-                    Na inschrijving ontvang je in januari meer (praktische) informatie over de start van de
+                    Na inschrijving ontvang je in augustus meer (praktische) informatie over de start van de
                     minor en de eerste vakken. Dit geldt ook voor de roosters, die niet eerder
                     bekend gemaakt kunnen worden. Voor fulltime geldt sowieso: elke dag aanwezig.
                 </p>
             </li>
-            <!--
             <h3>Te laat?</h3>
             <li class="mt-3">
                 <p style="font-size:1.2rem;">
                     Als je je niet hebt aangemeld voor de selectie of je bent te laat geweest
                     met het geven van aanvullende informatie, dan ben je automatisch niet
                     toegelaten tot de minor. Het kan wel zijn dat er nog plek is. 
-                    Na 23 november verschijnt hier informatie over eventuele verlate aanmelding.
+                    Na 22 mei verschijnt hier informatie over eventuele verlate aanmelding.
                 </p>
             </li>
-            -->
         </ol>
     </div>
 </div>
