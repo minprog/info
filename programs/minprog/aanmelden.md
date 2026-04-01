@@ -9,7 +9,7 @@
                     examencommissie van je eigen opleiding. Anders kan het zijn 
                     dat je de minorvakken volgt maar niet kunt gebruiken 
                     voor je diploma. Binnen de UvA gaat een deel automatisch: check 
-                    daarvoor de toestemmingsmatrix van de <a href="https://www.uva.nl/minors/">minoraanmelding</a>. Neem anders contact
+                    daarvoor de toestemmingsmatrix van de <a href="https://www.uva.nl/minors">minoraanmelding</a>. Neem anders contact
                     op met je studieadviseur of onderwijsbalie om dit te regelen.
                 </p>
                 <p>
@@ -49,7 +49,7 @@
             <!-- CENTRALE AANMELDING -->
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
-                    Op sommige momenten in het jaar is er een centrale aanmelding van UvA-minoren. Je kunt hieraan meedoen als deze open staat.Volg de instructies op de <a href="https://www.uva.nl/minors/">UvA-minorsite</a>. Er vindt geen strenge selectie plaats, in principe word je gewoon geplaatst!
+                    Op sommige momenten in het jaar is er een centrale aanmelding van UvA-minoren. Je kunt hieraan meedoen als deze open staat.Volg de instructies op de <a href="https://www.uva.nl/minors">UvA-minorsite</a>. Er vindt geen strenge selectie plaats, in principe word je gewoon geplaatst!
                 </p>
                 <p>
                     Tip: als het formulier niet open staat kun je gewoon door naar de volgende stap.
