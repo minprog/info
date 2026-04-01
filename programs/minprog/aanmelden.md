@@ -9,7 +9,7 @@
                     examencommissie van je eigen opleiding. Anders kan het zijn 
                     dat je de minorvakken volgt maar niet kunt gebruiken 
                     voor je diploma. Binnen de UvA gaat een deel automatisch: check 
-                    daarvoor de <a href="https://www.uva.nl/binaries/content/assets/uva/nl/onderwijs/bachelor/toestemmingsmatrix-2025-2026-toegankelijk-nl.pdf">toestemmingsmatrix (PDF)</a>. Neem anders contact
+                    daarvoor de toestemmingsmatrix van de <a href="https://www.uva.nl/minors/">minoraanmelding</a>. Neem anders contact
                     op met je studieadviseur of onderwijsbalie om dit te regelen.
                 </p>
                 <p>
@@ -49,10 +49,7 @@
             <!-- CENTRALE AANMELDING -->
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
-                    Op sommige momenten in het jaar is er een centrale aanmelding van UvA-minoren. Je kunt hieraan meedoen als deze open staat. Met onderstaande link ga je direct naar het formulier. Je hoeft bij dit formulier geen documenten te uploaden. Er vindt geen strenge selectie plaats, in principe word je gewoon geplaatst!
-                </p>
-                <p class="">
-                    <a  class="btn btn-outline-dark btn-lg" href="https://apps.powerapps.com/play/e/cc402cb1-9f42-e71b-b455-89d4251b4256/a/800e15e6-b81a-439c-9fd6-129fd1e3a744?tenantId=a0f1cacd-618c-4403-b945-76fb3d6874e5&hint=3963c1a6-6ec3-43c0-92a7-4faf357c6b31&hidenavbar=true" target="_blank">Aanmeldformulier Minoren</a>
+                    Op sommige momenten in het jaar is er een centrale aanmelding van UvA-minoren. Je kunt hieraan meedoen als deze open staat.Volg de instructies op de <a href="https://www.uva.nl/minors/">UvA-minorsite</a>. Er vindt geen strenge selectie plaats, in principe word je gewoon geplaatst!
                 </p>
                 <p>
                     Tip: als het formulier niet open staat kun je gewoon door naar de volgende stap.
@@ -60,7 +57,7 @@
             </li>
             
             <!-- EIGEN AANMELDING -->
-            <li class="mt-3">
+            <!--li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
                     Als docenten hebben we meer informatie
                     van je nodig om je te begeleiden bij de aanmelding. Onderstaand formulier moet je dus <u>altijd</u> invullen.
@@ -71,7 +68,7 @@
                 <p style="font-size:1.2rem;">
                     Omdat er momenteel nog plek is word je automatisch geplaatst en krijg je geen reactie op het formulier.
                 </p>
-            </li>
+            </li-->
 
             <li class="mt-3 mb-5">
                 <p class="" style="font-size:1.2rem;">
@@ -85,10 +82,10 @@
                 <p style="font-size:1.2rem;">
                     Als je mee hebt gedaan aan de centrale aanmelding krijg je vanzelf bericht of je bent geplaatst voor de minor Programmeren.
                 </p>
-                <p style="font-size:1.2rem;">
+                <!--p style="font-size:1.2rem;">
                     Als je tussendoor hebt aangemeld, alleen via ons eigen formulier, ben je automatisch geplaatst op voorwaarde dat je je
                     propedeuse hebt gehaald.
-                </p>
+                </p-->
             </li>
             <li class="mt-3">
                 <!--<p style="font-size:1.2rem;">
@@ -97,7 +94,7 @@
                 </p>-->
                 <p style="font-size:1.2rem;">
                     Schrijf je definitief in voor de minorvakken.
-                    Dit kan tijdens de normale vakinschrijving van de UvA <strong>vanaf 1 tot 8 december, 13:00</strong>. Dit gaat via het systeem GLASS.
+                    Dit kan tijdens de normale vakinschrijving van de UvA <strong>begin juni</strong>. Dit gaat via het systeem GLASS.
                 </p>
                 <p class="">
                     <a class="btn btn-outline-dark btn-lg" href="https://glass.uva.nl/" target="_blank">Ga naar GLASS om je inschrijvingen te beheren</a>
