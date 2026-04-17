@@ -333,6 +333,8 @@ Examples:
 
 Now make a virtual environment inside the course folder.
 
+> Note: if your teacher provided a file called `pyproject.toml`, please skip creating a virtual environment yourself. Go to [Working with projects](#working-with-projects) instead.
+
 A **virtual environment** is a folder that contains a Python setup just for this course or project.
 
 Why this matters:
@@ -344,24 +346,29 @@ Why this matters:
 From **inside** the course folder, run:
 
 ~~~bash
-uv venv
+uv venv --python 3.14
 ~~~
 
-This creates a `.venv` folder in the current directory.
+Here, we have added the option `--python 3.14` to specify the version that we just installed. This is useful in case there are multiple Python versions on your computer (and there probably are).
 
-The `.venv` folder is managed automatically by `uv`.
+The command creates a `.venv` folder in the current directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
 
 - do not edit files inside it manually
 - do not rename or move it
 - do not delete it unless you want to recreate the environment
 
-You can think of it as the "engine room" for your project.
+### Working with projects
 
-If you want to be explicit about the Python version, use:
+You may have received a `zip` file for the course or just a single `pyproject.toml`. This file contains a list of the required packages. It can be used to automatically create a virtual environment.
+
+Make sure that you have extracted the files from the zip into an appropriate course folder, or you have placed the downloaded `pyproject.toml`. Then it's just two steps:
 
 ~~~bash
-uv venv --python 3.14
+cd ~/Documents/programming/course-with-project
+uv sync
 ~~~
+
+The `sync` command will create the virtual environment for you.
 
 ### Confirm the environment exists
 
@@ -391,7 +398,7 @@ Each time you work on the course:
 - go to your course folder
 - run commands there
 
-Example:
+And recall, to go to your course folder, use:
 
 ~~~bash
 cd ~/programming/my-course
@@ -416,10 +423,10 @@ When you are inside the course folder, use `uv run` to execute Python and tools.
 - the packages installed in this course’s environment are used
 - you do not accidentally use system-wide (global) Python or packages
 
-That is the key workflow:
+So that's why you always use the following workflow:
 
 - go to the course folder
-- stay in the course folder
+- if needed, go to a subfolder that's inside the course folder
 - run commands with `uv run`
 
 Example pattern:
@@ -428,25 +435,11 @@ Example pattern:
 uv run <command>
 ~~~
 
-Because you are already in the folder for that course, your work stays organized there.
-
-### Running Python code
-
-If your course uses Python files such as `hello.py`, keep those files inside the course folder.
-
-Example:
-
-~~~bash
-cd ~/programming/my-course
-~~~
-
-You can then run the Python interpreter managed by `uv` when needed. For example:
+Normally this would be a Python program that you wrote, like:
 
 ~~~bash
 uv run python hello.py
 ~~~
-
-If your project is set up in the course folder, `uv run` uses the local environment.
 
 
 
