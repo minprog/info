@@ -3,6 +3,9 @@ layout: welkom
 title: Welkom — Minor Programmeren (deeltijd)
 ---
 
+* Auto-generated table of contents for this page
+{:toc}
+
 # Welkom bij de Minor Programmeren!
 
 *Versie: lente 2026. Dit is de informatie voor studenten die beginnen bij Programmeren 1 en/of Programmeren 2, en **niet** de hele minor in één semester gaan volgen.*
@@ -22,9 +25,6 @@ Wat kun je verwachten komende tijd? Heel veel zelf programmeren, dat staat op nu
 We hopen jullie allemaal te spreken in de eerste weken van de minor, maar mocht je nu al even iets willen toelichten stuur dan gerust een mailtje naar <help@mprog.nl>. We nemen dan snel contact met je op.
 
 > **Geen paniek!** In de komende tijd zul je merken dat bij de minor studenten rondlopen met méér en met minder ervaring. Dat is heel mooi, want dan kunnen we van elkaar leren, en bovendien hebben we opdrachten op niveau voor elk van deze studenten. Maar voel je niet geïntimideerd, dat is veel belangrijker. Iedereen komt hier om iets te leren, en je gaat heel ver komen, verder dan je misschien zou denken. Daarnaast is de aandacht van de staf vol gericht op studenten die nog geen ervaring hebben. Dat zijn onze belangrijkste studenten, die nog veel te leren hebben.
-
-* TOC
-{:toc}
 
 ## Introductie
 
