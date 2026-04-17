@@ -10,19 +10,15 @@ title: Python setup with uv
 
 This guide shows how to:
 
-- install `uv`
-- install a new Python version
-- create a safe programming folder
-- make a course subfolder
-- create a virtual environment in that course folder
-- run commands with `uv run` from inside the course folder, without activating the environment
-- add extra packages to the virtual environment later
+- install `uv` and a recent Python version
+- create a programming folder and subfolders for your courses
+- manage Python packages required for each course
+- how to run your Python programs
 
-**Key idea:** you will always work inside one course folder using the terminal. All commands in this guide assume you are inside that folder.
+There are other ways to manage Python! But below, we try to provide a consistent experience
+that is useful in a university setting.
 
----
-
-## Files and folders (basics)
+## Background on files and folders
 
 If you are new to programming, it is important to understand how files and folders work.
 
@@ -77,9 +73,10 @@ cd ~/programming/my-course
 
 This step is important: most commands in this guide must be run **inside the correct folder**.
 
----
 
-## What is a shell?
+
+
+## Working with your computer from a shell
 
 When you normally use your computer, you click on icons, open folders, and drag files. This is called a **graphical user interface (GUI)**.
 
@@ -170,25 +167,24 @@ This guide uses the shell because programming tools like `uv` are controlled wit
 
 You do not replace your normal way of using the computer; you add the shell as a second way of working.
 
----
+
+
 
 ## Installing uv and Python
 
-`uv` is a fast Python package and environment manager.
-
-`uv` replaces several older tools you may see in other guides, such as:
+`uv` is a fast Python package and environment manager. It replaces several older tools you may see in other guides, such as:
 
 - `pip` (for installing packages)
 - `venv` (for creating virtual environments)
 - separate Python installers
 
-Instead of learning multiple tools, you use **one tool (********uv********) for everything**.
+Instead of learning multiple tools, you use **one tool (uv) for everything**. This has advantages and also disadvantages. But for now it keeps learning simple, and you can expand your knowledge later.
 
 Open a terminal and install it.
 
 ### macOS and Linux
 
-`mkdir` means “make directory” (create a folder).
+Run the following command from your terminal:
 
 ~~~bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -201,6 +197,8 @@ Check that it works:
 ~~~bash
 uv --version
 ~~~
+
+There could be errors! In that case ask your teacher.
 
 ### Windows
 
@@ -232,7 +230,8 @@ You can check which Python versions are available on your system with:
 uv python list
 ~~~
 
----
+
+
 
 ## Create a programming folder and course subfolder
 
@@ -327,7 +326,8 @@ Examples:
 - `intro-programming`
 - `datascience-course`
 
----
+
+
 
 ## Create a virtual environment in the course folder
 
@@ -403,7 +403,8 @@ On Windows PowerShell:
 cd $HOME\programming\my-course
 ~~~
 
----
+
+
 
 ## Run commands with `uv run`
 
@@ -447,9 +448,10 @@ uv run python hello.py
 
 If your project is set up in the course folder, `uv run` uses the local environment.
 
----
 
-## Adding packages
+
+
+## Adding packages to your course environment
 
 A **package** is a collection of Python code written by other people that you can reuse in your own programs.
 
@@ -513,6 +515,24 @@ You can add more than one package:
 uv pip install numpy pandas matplotlib
 ~~~
 
+### If you have a `requirements.txt`
+
+In case your teacher provided a `requirements.txt` or a `pyproject.toml` they already had some packages in mind that you need.
+
+If you have a requirements file, run this command once to install the packages into your environment:
+
+~~~bash
+cd ~/programming/my-course
+uv pip install -r requirements.txt
+~~~
+
+And if you have a project file, you can run the following command (also just once!) to add the packages:
+
+~~~bash
+cd ~/programming/my-course
+uv sync
+~~~
+
 ### Installing additional packages later
 
 Any time later, return to the same course folder and add packages there.
@@ -526,9 +546,10 @@ uv pip install rich
 
 This keeps packages tied to that course instead of mixing everything together globally.
 
----
 
-## Recommended student workflow
+
+
+## Recommended workflow
 
 For each new course:
 
@@ -570,31 +591,3 @@ Do not:
 - install all packages globally
 - mix multiple courses in one folder
 - forget to move into the course folder before running commands
-
-## Summary
-
-Use this pattern every time:
-
-~~~bash
-uv python install 3.14
-mkdir -p ~/programming/my-course
-cd ~/programming/my-course
-uv venv --python 3.14
-~~~
-
-Then, when working:
-
-~~~bash
-cd ~/programming/my-course
-uv run <tool-name>
-uv pip install <package-name>
-uv run python your_file.py
-~~~
-
-This gives you:
-
-- one safe place for programming work
-- one folder per course
-- one environment per course
-- no need to activate the environment manually
-- an easy way to add packages when needed
