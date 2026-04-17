@@ -6,4 +6,4 @@ collections:
 plugins:
     - jekyll-redirect-from
 kramdown:
-    toc_levels: "2,3"
+    toc_levels: "2"
