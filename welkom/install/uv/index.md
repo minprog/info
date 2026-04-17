@@ -533,6 +533,8 @@ cd ~/programming/my-course
 uv sync
 ~~~
 
+To understand projects with `pyproject.toml` better, read the [Projects guide](https://docs.astral.sh/uv/guides/projects/) on the **uv** website.
+
 ### Installing additional packages later
 
 Any time later, return to the same course folder and add packages there. This keeps packages tied to that course instead of mixing everything together.
