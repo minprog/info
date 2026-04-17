@@ -3,6 +3,9 @@ layout: welkom
 title: Welkom — Minor Programmeren (semester)
 ---
 
+* Auto-generated table of contents for this page
+{:toc}
+
 # Welkom bij de Minor Programmeren!
 
 *Versie: lente 2026. Dit is de informatie voor studenten die de hele minor in één semester willen volgen.*

@@ -3,6 +3,9 @@ layout: welkom
 title: Python setup with uv
 ---
 
+* Auto-generated table of contents for this page
+{:toc}
+
 # Python setup manual with `uv`
 
 This guide shows how to:
