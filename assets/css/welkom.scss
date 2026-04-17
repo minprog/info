@@ -1,0 +1,206 @@
+---
+---
+
+// welkom.scss — scoped under .welkom-theme
+// "Geeky but fun, very readable" theme for /welkom pages
+
+.welkom-theme {
+  --welkom-bg:                #F8F9FA;
+  --welkom-text:              #1A1A2E;
+  --welkom-heading:           #0E1F2B;
+  --welkom-accent:            #00C896;
+  --welkom-accent-dark:       #008F6A;
+  --welkom-code-bg:           #EFF3F8;
+  --welkom-code-border:       #C5D0DE;
+  --welkom-blockquote-bg:     #E8F5F0;
+  --welkom-blockquote-border: #00C896;
+  --welkom-link:              #0066CC;
+  --welkom-link-hover:        #004499;
+  --welkom-rule:              #D0D7DE;
+
+  background-color: var(--welkom-bg);
+  min-height: 60vh;
+}
+
+.welkom-content {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+@media (max-width: 575.98px) {
+  .welkom-content {
+    padding: 1.5rem 1rem 3rem;
+  }
+}
+
+.welkom-theme {
+  color: var(--welkom-text);
+  font-family: 'IBM Plex Sans', 'PT Sans', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.welkom-theme h1,
+.welkom-theme h2,
+.welkom-theme h3,
+.welkom-theme h4,
+.welkom-theme h5,
+.welkom-theme h6 {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-weight: 700;
+  color: var(--welkom-heading);
+  line-height: 1.3;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.welkom-theme h1 {
+  font-size: 2rem;
+  border-bottom: 3px solid var(--welkom-accent);
+  padding-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+.welkom-theme h2 {
+  font-size: 1.45rem;
+  border-bottom: 1px solid var(--welkom-rule);
+  padding-bottom: 0.25rem;
+}
+
+.welkom-theme h3 {
+  font-size: 1.175rem;
+  color: var(--welkom-accent-dark);
+}
+
+.welkom-theme h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #555;
+}
+
+.welkom-theme a {
+  color: var(--welkom-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.welkom-theme a:hover {
+  color: var(--welkom-link-hover);
+  text-decoration-thickness: 2px;
+}
+
+.welkom-theme p {
+  margin-bottom: 1.1rem;
+}
+
+.welkom-theme ul,
+.welkom-theme ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.1rem;
+}
+
+.welkom-theme li {
+  margin-bottom: 0.35rem;
+}
+
+.welkom-theme li > ul,
+.welkom-theme li > ol {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.welkom-theme hr {
+  border: none;
+  border-top: 2px solid var(--welkom-rule);
+  margin: 2.5rem 0;
+}
+
+.welkom-theme blockquote {
+  background-color: var(--welkom-blockquote-bg);
+  border-left: 4px solid var(--welkom-blockquote-border);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.75rem 0;
+  color: var(--welkom-text);
+}
+
+.welkom-theme blockquote p {
+  margin-bottom: 0;
+}
+
+.welkom-theme blockquote p:not(:last-child) {
+  margin-bottom: 0.6rem;
+}
+
+.welkom-theme code {
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  font-size: 0.875em;
+  background-color: var(--welkom-code-bg);
+  border: 1px solid var(--welkom-code-border);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  color: var(--welkom-heading);
+}
+
+.welkom-theme .highlight,
+.welkom-theme pre {
+  background-color: var(--welkom-code-bg);
+  border: 1px solid var(--welkom-code-border);
+  border-left: 4px solid var(--welkom-accent);
+  border-radius: 0 6px 6px 0;
+  padding: 1.1rem 1.25rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.welkom-theme pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-family: 'IBM Plex Mono', 'Courier New', monospace;
+  line-height: 1.6;
+  color: var(--welkom-heading);
+}
+
+.welkom-theme .highlight pre {
+  border: none;
+  border-left: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.welkom-theme iframe {
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.welkom-theme img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.welkom-theme strong {
+  font-weight: 600;
+  color: var(--welkom-heading);
+}
+
+.welkom-theme em {
+  font-style: italic;
+}
+
+.welkom-theme small {
+  font-size: 0.8rem;
+  color: #666;
+}

@@ -1,3 +1,8 @@
+---
+layout: welkom
+title: Welkom — Minor Programmeren (semester)
+---
+
 # Welkom bij de Minor Programmeren!
 
 *Versie: lente 2026. Dit is de informatie voor studenten die de hele minor in één semester willen volgen.*
@@ -21,7 +26,7 @@ We hopen jullie allemaal te spreken in de eerste paar dagen van de minor, maar m
 ## Introductie
 
 <div style="float:right; max-width: 150px; margin-left:2em; margin-bottom:2em; margin-top:0.25em">
-<img src="../lab42.png" style="max-width:150px;"><br><small>Lab42, Science Park &nbsp;900, Amsterdam</small>
+<img src="/welkom/lab42.png" style="max-width:150px;"><br><small>Lab42, Science Park &nbsp;900, Amsterdam</small>
 </div>
 
 Op de eerste dag, maandag 2 februari, komen we 's ochtends om 9:45 bijeen in Lab42 voor het inleidende college (lokaal L0.09 op de begane grond). Zoals je misschien al weet, gebruiken we veel videomateriaal, en tijdens deze bijeenkomst tonen we de eerste fragmenten uit de colleges van Harvard. Daarna ga je meteen aan de slag op het Science Park, dus neem je opgeladen laptop mee!
@@ -65,7 +70,7 @@ Als je de hele minor gaat volgen, dan begin je met twee vakken die je tegelijk v
 
 ## Verwachtingen
 
-{% include verwachtingen.md %}
+{% include_relative _includes/verwachtingen.md %}
 
 ## Praktische zaken
 
@@ -73,7 +78,7 @@ Als je de hele minor gaat volgen, dan begin je met twee vakken die je tegelijk v
 
 Alle colleges vinden plaats op het Science Park in Amsterdam. Ons gebouw "Lab42" heeft huisnummer 900, en onze vaste lokalen vind je op de begane grond. Enkele tentamens vinden plaats in één van de speciale tentamenzalen aan de randen van Amsterdam.
 
-{% include mail.md %}
+{% include_relative _includes/mail.md %}
 
 ### Roosters
 
@@ -87,26 +92,26 @@ De groepsindeling voor de minor wordt door ons gedaan op basis van opgegeven erv
 
 ### Tentamens
 
-{% include tentamens.md %}
+{% include_relative _includes/tentamens.md %}
 
 ## Benodigdheden
 
-{% include website.md %}
+{% include_relative _includes/website.md %}
 
-{% include benodigdheden.md %}
+{% include_relative _includes/benodigdheden.md %}
 
 ## Beperkingen
 
-{% include beperkingen.md %}
+{% include_relative _includes/beperkingen.md %}
 
 ## Administratie
 
-{% include admin.md %}
+{% include_relative _includes/admin.md %}
 
-{% include ziekte.md %}
+{% include_relative _includes/ziekte.md %}
 
 ## Voorbereiding
 
-{% include voorbereiding.md %}
+{% include_relative _includes/voorbereiding.md %}
 
 Kortom, we zien je snel. Tot in februari!

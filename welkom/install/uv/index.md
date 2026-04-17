@@ -1,3 +1,8 @@
+---
+layout: welkom
+title: Python setup with uv
+---
+
 # Python setup manual with `uv`
 
 This guide shows how to:
