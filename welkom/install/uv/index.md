@@ -233,7 +233,7 @@ uv python list
 
 
 
-## Create a programming folder and course subfolder
+## Creating folders for all your courses
 
 Do **not** work directly in Downloads, on the Desktop, or inside random temporary folders. Create one main folder in a place that is **regularly backed up** and easy to find.
 
