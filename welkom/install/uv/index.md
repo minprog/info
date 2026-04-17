@@ -508,43 +508,24 @@ You can add more than one package:
 uv pip install numpy pandas matplotlib
 ~~~
 
-### If you have a `requirements.txt`
+> In case your teacher provided a `requirements.txt` they already had some packages in mind that you need. Run this command once to install the packages into your environment:
+> 
+> ~~~bash
+> cd ~/programming/my-course
+> uv pip install -r requirements.txt
+> ~~~
 
-In case your teacher provided a `requirements.txt` or a `pyproject.toml` they already had some packages in mind that you need.
+### Adding packages to a project
 
-If you have a requirements file, run this command once to install the packages into your environment:
-
-~~~bash
-cd ~/programming/my-course
-uv pip install -r requirements.txt
-~~~
-
-And if you have a project file, you can run the following command (also just once!) to add the packages:
-
-~~~bash
-cd ~/programming/my-course
-uv sync
-~~~
-
-To understand projects with `pyproject.toml` better, read the [Projects guide](https://docs.astral.sh/uv/guides/projects/) on the **uv** website.
-
-### Installing additional packages later
-
-Any time later, return to the same course folder and add packages there. This keeps packages tied to that course instead of mixing everything together.
-
-Example:
-
-~~~bash
-cd ~/programming/my-course
-uv pip install rich
-~~~
-
-But if your course works with a `pyproject.toml` you need to add your package to the project using another command:
+If your course works with a `pyproject.toml` you need to add your package to the project using another command:
 
 ~~~bash
 cd ~/programming/my-course
 uv add rich
 ~~~
+
+To understand projects with `pyproject.toml` better, read the [Projects guide](https://docs.astral.sh/uv/guides/projects/) on the **uv** website.
+
 
 
 
