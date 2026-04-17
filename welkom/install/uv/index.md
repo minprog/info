@@ -535,7 +535,7 @@ uv sync
 
 ### Installing additional packages later
 
-Any time later, return to the same course folder and add packages there.
+Any time later, return to the same course folder and add packages there. This keeps packages tied to that course instead of mixing everything together.
 
 Example:
 
@@ -544,8 +544,12 @@ cd ~/programming/my-course
 uv pip install rich
 ~~~
 
-This keeps packages tied to that course instead of mixing everything together globally.
+But if your course works with a `pyproject.toml` you need to add your package to the project using another command:
 
+~~~bash
+cd ~/programming/my-course
+uv add rich
+~~~
 
 
 
@@ -564,7 +568,6 @@ For each new course:
 #### macOS and Linux
 
 ~~~bash
-uv python install 3.14
 mkdir -p ~/programming/python101
 cd ~/programming/python101
 uv venv --python 3.14
@@ -575,7 +578,6 @@ uv run python
 #### Windows PowerShell
 
 ~~~powershell
-uv python install 3.14
 mkdir $HOME\programming\python101
 cd $HOME\programming\python101
 uv venv --python 3.14
