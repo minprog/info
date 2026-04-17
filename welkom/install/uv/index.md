@@ -326,7 +326,7 @@ Examples:
 - `intro-programming`
 - `datascience-course`
 
-
+> One note about **data files**. If you are going to use very large data files in a course, it might not be a good idea to put these in OneDrive or another location that is meant for automatic backup. But it would still be nice if your own code is backed up! In such a case, your teacher can provide you with suggestions on how to manage this.
 
 
 ## Create a virtual environment in the course folder
