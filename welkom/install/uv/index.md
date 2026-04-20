@@ -1,5 +1,5 @@
 ---
-layout: welkom
+layout: welkom-tutorial
 title: Python setup with uv
 ---
 
@@ -60,19 +60,6 @@ On Windows:
 
 - `$HOME\programming`
 - `$HOME\programming\my-course`
-
-### Moving between folders
-
-In the terminal, you move between folders using `cd` (change directory).
-
-Example:
-
-~~~bash
-cd ~/programming/my-course
-~~~
-
-This step is important: most commands in this guide must be run **inside the correct folder**.
-
 
 
 
@@ -159,6 +146,18 @@ For example:
 
 This guide uses the shell because programming tools like `uv` are controlled with commands.
 
+### Moving between folders
+
+In the terminal, you move between folders using `cd` (change directory).
+
+Example:
+
+~~~bash
+cd ~/programming/my-course
+~~~
+
+This step is important: most commands in this guide must be run **inside the correct folder**.
+
 ### Why this matters
 
 - Commands are precise and repeatable
@@ -180,9 +179,11 @@ You do not replace your normal way of using the computer; you add the shell as a
 
 Instead of learning multiple tools, you use **one tool (uv) for everything**. This has advantages and also disadvantages. But for now it keeps learning simple, and you can expand your knowledge later.
 
+### Install it now
+
 Open a terminal and install it.
 
-### macOS and Linux
+#### macOS and Linux
 
 Run the following command from your terminal:
 
@@ -200,7 +201,7 @@ uv --version
 
 There could be errors! In that case ask your teacher.
 
-### Windows
+#### Windows
 
 In PowerShell, run:
 
