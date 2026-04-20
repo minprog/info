@@ -393,13 +393,22 @@ programming/
     └── week1.py
 ~~~
 
+
+## Running Python programs
+
+Now that everything is installed, you can get into the routine of running your self-written Python programs.
+
+
 ### Work from inside the course folder
 
-Each time you work on the course:
+Each time you work on a course, you connect your shell to the course directory (folder). Only then will it pick up on the packages you installed.
 
-- open a terminal
-- go to your course folder
-- run commands there
+So when working of the course you always start with:
+
+1. open a terminal
+2. go to your course folder (`cd`)
+3. if needed, go to a subfolder
+4. run commands from there
 
 And recall, to go to your course folder, use:
 
