@@ -303,14 +303,14 @@ Then create your programming folder inside that location.
 
 ### Create the folder and course subfolder
 
-### macOS and Linux
+#### macOS and Linux
 
 ~~~bash
 mkdir -p ~/Documents/programming/my-course
 cd ~/Documents/programming/my-course
 ~~~
 
-### Windows PowerShell
+#### Windows PowerShell
 
 `mkdir` means “make directory” (create a folder).
 

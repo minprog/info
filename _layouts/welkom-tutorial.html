@@ -23,8 +23,8 @@ layout: default
     <button id="tut-prev" class="tut-nav-btn" type="button">← Prev</button>
     <span id="tut-progress" class="tut-progress" aria-live="polite"></span>
     <button id="tut-next" class="tut-nav-btn" type="button">Next →</button>
+    <button id="tut-close" class="tut-close-btn" type="button">✕ Exit</button>
   </nav>
-  <button id="tut-close" class="tut-close-btn" type="button">✕ Exit</button>
 </div>
 
 <script>
@@ -70,7 +70,7 @@ layout: default
     showSlide(0);
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
-    closeBtn.focus();
+    nextBtn.focus();
   }
 
   function closeOverlay() {
