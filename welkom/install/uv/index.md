@@ -190,7 +190,7 @@ Working in the shell do not replace your normal way of using the computer; you a
 
 ## Installing uv and Python
 
-`uv` is a fast Python package and environment manager. It replaces several older tools you may see in other guides, such as:
+`uv` is a Python package and environment manager. It replaces several older tools you may see in other guides, such as:
 
 - `pip` (for installing packages)
 - `venv` (for creating virtual environments)
@@ -236,7 +236,7 @@ uv --version
 
 ### Install a Python version with `uv`
 
-You can use `uv` to install Python itself.
+The first step when using `uv` is to install Python itself. You will need a recent version of Python, and `uv` makes it very easy to get that.
 
 For example, to install Python 3.14:
 
@@ -250,14 +250,19 @@ You can check which Python versions are available on your system with:
 uv python list
 ~~~
 
+Sometimes this will list a few older versions, as well. That is fine, we will make sure that Python 3.14 is used during your course work.
 
 
 
 ## Creating folders for all your courses
 
-Do **not** work directly in Downloads, on the Desktop, or inside random temporary folders. Create one main folder in a place that is **regularly backed up** and easy to find.
+You will now need to decide where your course files are going to be saved on your computer. Probably you have already created a place for university work, for example in your `Documents` directory. You may or may not have organized it, for example by making a folder for each separate course.
 
-Important: you create this folder **once**, and keep using it throughout the course. Do not create a new programming folder every time.
+Your first task is to create a directory where all your **programming-related course** files are going to be. This is not necessarily the same directory as where other university work is stored. You will have multiple programming courses, and maybe a few projects, so it's good to make a dedicated directory for that.
+
+> In the next section, we will suggest the best options. It's fine if you make a different decision. However, do **not** save your work in Downloads, on the Desktop, or inside other "easy to access" folders. Such directories are not backed up, which will be very sad when your computer crashes and you lose all of it.
+
+
 
 ### Good locations (recommended)
 
@@ -312,13 +317,15 @@ If your Documents folder is already inside OneDrive (common on many systems), th
 
 Then create your programming folder inside that location.
 
-### Example paths
-
-- macOS/Linux (Documents): `~/Documents/programming`
-- Windows (Documents): `$HOME\Documents\programming`
-- Cloud example: `~/Documents/programming` if Documents is synced
-
 ### Create the folder and course subfolder
+
+Let's say that you are using the following path as your programming folder:
+
+- macOS/Linux: `~/Documents/programming`
+- Windows: `$HOME\Documents\programming`
+- Windows OneDrive: `$env:OneDrive\Documents\programming`
+
+Now it's time to create a course-specific subfolder.
 
 #### macOS and Linux
 
@@ -351,10 +358,6 @@ Examples:
 
 ## Create a virtual environment in the course folder
 
-Now make a virtual environment inside the course folder.
-
-> Note: if your teacher provided a file called `pyproject.toml`, please skip creating a virtual environment yourself. Go to [Working with projects](#working-with-projects) instead.
-
 A **virtual environment** is a folder that contains a Python setup just for this course or project.
 
 Why this matters:
@@ -362,6 +365,18 @@ Why this matters:
 - it keeps packages for this course separate from other courses
 - it avoids conflicts between different projects
 - it makes it easier to reproduce the same setup later
+
+We distinguish a few options:
+
+1. Your course or project does not provide any configuration. In that case, you make an "empty" virtual environment for the course and you can install any packages you need.
+
+2. Your project provides a `requirements.txt` file with a list of packages that are needed (often along with some other required files).
+
+3. Your course provides a `pyproject.toml`, again with a list of packages that are needed. This works a little bit differently.
+
+In the next sections we provide instructions for each of these cases.
+
+### 1. Installing an empty virtual environemtn
 
 From **inside** the course folder, run:
 
@@ -371,13 +386,37 @@ uv venv --python 3.14
 
 Here, we have added the option `--python 3.14` to specify the version that we just installed. This is useful in case there are multiple Python versions on your computer (and there probably are).
 
-The command creates a `.venv` folder in the current directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
+The command creates a `.venv` folder in the course directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
 
 - do not edit files inside it manually
 - do not rename or move it
 - do not delete it unless you want to recreate the environment
 
-### Working with projects
+### 2. Installing with `requirements.txt`
+
+From **inside** the course folder, run:
+
+~~~bash
+uv venv --python 3.14
+~~~
+
+Here, we have added the option `--python 3.14` to specify the version that we just installed. This is useful in case there are multiple Python versions on your computer (and there probably are).
+
+Then run:
+
+~~~bash
+uv pip install -r requirements.txt
+~~~
+
+This will read the requirements file and install all packages that are mentioned in it.
+
+Note that you now have a `.venv` folder in the course directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
+
+- do not edit files inside it manually
+- do not rename or move it
+- do not delete it unless you want to recreate the environment
+
+### 3. Installing with `pyproject.toml`
 
 You may have received a `zip` file for the course or just a single `pyproject.toml`. This file contains a list of the required packages. It can be used to automatically create a virtual environment.
 
@@ -388,11 +427,17 @@ cd ~/Documents/programming/course-with-project
 uv sync
 ~~~
 
-The `sync` command will create the virtual environment for you.
+The `sync` command will create the virtual environment for you, and install additional packages.
+
+Note that you now have a `.venv` folder in the course directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
+
+- do not edit files inside it manually
+- do not rename or move it
+- do not delete it unless you want to recreate the environment
 
 ### Confirm the environment exists
 
-You should now have a folder structure like this:
+After setting up the virtual enviroment, you should now have a folder structure like this:
 
 ~~~text
 programming/
