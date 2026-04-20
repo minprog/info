@@ -15,15 +15,14 @@ This guide shows how to:
 - manage Python packages required for each course
 - how to run your Python programs
 
-There are other ways to manage Python! But below, we try to provide a consistent experience
-that is useful in a university setting.
+There are other ways to manage Python! But in this tutorial, we try to provide a consistent experience that is useful in a university setting.
 
 ## Background on files and folders
 
 If you are new to programming, it is important to understand how files and folders work.
 
 - A **folder** (also called a directory) is a container that can hold files and other folders.
-- A **file** is a document or piece of data, such as a Python program (`.py`).
+- A **file** is a document or piece of data, such as a Python program (the name will end in `.py`), but it could also literally be a data file (for example, ending in `.csv`).
 
 Think of it like this:
 
@@ -38,28 +37,27 @@ programming/
 └── my-course/
     ├── hello.py
     └── week1.py
+    └── zac-data-2026.csv
 ~~~
 
-A file ending in `.py` is a **Python file**. It contains Python code that you can run.
+You will be creating **Python file** during the course. You probably start with an empty file, write Python code, save the file and then **Run** it. More on that later.
 
 ### Paths
 
-A **path** tells your computer where something is located.
+A **path** tells your computer where something is located. Your file is in a directory, which is in a directory, which may be in another directory. The path specifies exactly where this is.
 
-Note:
+Examples for macOS and Windows:
 
-- `~` (macOS/Linux) and `$HOME` (Windows PowerShell) both refer to your **home folder**
-- your home folder is your personal space on the computer where your files live
+- `/Users/isaiah/Documents/programming` → your programming folder (on macOS/Linux)
+- `C:\Users\isaiah\Documents\programming\my-course` → your course folder (on Windows)
 
-Examples:
+Note: `~` (macOS/Linux) and `$HOME` (Windows PowerShell) both refer to your **home folder**.
+Your home folder is your personal space on the computer where your files live, separate from other people that might use the same computer.
 
-- `~/programming` → your programming folder (on macOS/Linux)
-- `~/programming/my-course` → your course folder
+This means that often you can use shorter paths to the same location:
 
-On Windows:
-
-- `$HOME\programming`
-- `$HOME\programming\my-course`
+- `~/Documents/programming/my-course` (macOS/Linux)
+- `$HOME\Documents\programming\my-course`
 
 
 
