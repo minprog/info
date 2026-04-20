@@ -40,25 +40,26 @@ programming/
     └── zac-data-2026.csv
 ~~~
 
-You will be creating **Python file** during the course. You probably start with an empty file, write Python code, save the file and then **Run** it. More on that later.
+You will be creating **Python files** during the course. You probably start with an empty file, write Python code, save the file and then **Run** it. More on that later.
 
 ### Paths
 
-A **path** tells your computer where something is located. Your file is in a directory, which is in a directory, which may be in another directory. The path specifies exactly where this is.
+A **path** tells your computer where something is located. Your file is in a directory, which is in a directory, which may be in another directory.
 
-Examples for macOS and Windows:
+Most likely, you will be saving files in the `Documents` folder. Here are examples of the full paths when you make a programming directory inside a documents directory:
 
-- `/Users/isaiah/Documents/programming` → your programming folder (on macOS/Linux)
-- `C:\Users\isaiah\Documents\programming\my-course` → your course folder (on Windows)
+- `/Users/isaiah/Documents/programming/my-course` (macOS/Linux)
+- `C:\Users\isaiah\Documents\programming\my-course` (Windows)
+- `C:\Users\isaiah\OneDrive\Documents\programming\my-course` (Windows with OneDrive)
 
 Note: `~` (macOS/Linux) and `$HOME` (Windows PowerShell) both refer to your **home folder**.
 Your home folder is your personal space on the computer where your files live, separate from other people that might use the same computer.
 
-This means that often you can use shorter paths to the same location:
+This means that often you can use slightly shorter paths to the same location:
 
 - `~/Documents/programming/my-course` (macOS/Linux)
-- `$HOME\Documents\programming\my-course`
-
+- `$HOME\Documents\programming\my-course` (Windows)
+- `$env:OneDrive\Documents\programming\my-course` (Windows with OneDrive)
 
 
 ## Working with your computer from a shell
@@ -106,18 +107,14 @@ The `>` is the **prompt**. The prompt is the place where you type commands. It m
 
 ### First steps in the terminal
 
-You can try a few simple commands:
+You can try a few simple commands to look inside directories and see what files and directories are there:
 
-List files in the current folder:
+#### macOS/Linux
+
+Show a list of files in the current folder:
 
 ~~~bash
 ls
-~~~
-
-On Windows PowerShell:
-
-~~~powershell
-dir
 ~~~
 
 Move into your Documents folder:
@@ -126,11 +123,44 @@ Move into your Documents folder:
 cd ~/Documents
 ~~~
 
-On Windows:
+"Moving into" here means connecting the shell to another directory. If you then issue `ls` again, you will get a listing of the files in *that* directory.
+
+#### Windows PowerShell
+
+Show a list of files in the current folder:
+
+~~~powershell
+dir
+~~~
+
+Move into your Documents folder:
 
 ~~~powershell
 cd $HOME\Documents
 ~~~
+
+"Moving into" here means connecting the shell to another directory. If you then issue `dir` again, you will get a listing of the files in *that* directory.
+
+### Moving between folders
+
+The emphasize a bit more: in the terminal, you move between folders using `cd` (change directory).
+
+Example:
+
+~~~bash
+cd ~/programming/my-course
+~~~
+
+This step is important: most commands in this guide must be run **inside the correct folder**.
+
+For example, you might want to run a Python program called `mario.py` which is in the `my-course` directory.
+
+~~~bash
+cd ~/programming/my-course
+uv run mario.py
+~~~
+
+The second command, `uv run`, would not work if you did not `cd` into the `my-course` directory first!
 
 ### How the shell relates to normal computer use
 
@@ -144,19 +174,8 @@ For example:
 
 This guide uses the shell because programming tools like `uv` are controlled with commands.
 
-### Moving between folders
 
-In the terminal, you move between folders using `cd` (change directory).
-
-Example:
-
-~~~bash
-cd ~/programming/my-course
-~~~
-
-This step is important: most commands in this guide must be run **inside the correct folder**.
-
-### Why this matters
+#### Why this matters
 
 Programmers generally work in the shell a lot, because it helps them work better:
 
