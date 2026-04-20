@@ -264,11 +264,13 @@ Your first task is to create a directory where all your **programming-related co
 
 
 
-### Good locations (recommended)
+### Good locations for your work
 
 Choosing the right location matters because you do not want to lose your work and you want it to be easy to find.
 
-#### macOS (recommended: Documents folder)
+> One note about **data files**. If you are going to use very large data files in a course, it might not be a good idea to put these in OneDrive or another location that is meant for automatic backup (this is what we suggest below). But it would still be nice if your own code is backed up! In such a case, your teacher can provide you with suggestions on how to manage this.
+
+#### macOS
 
 Use your **Documents** folder:
 
@@ -285,7 +287,7 @@ So your programming folder becomes:
 
 - `~/Documents/programming`
 
-#### Windows (recommended: Documents or OneDrive)
+#### Windows
 
 You have two good options:
 
@@ -317,7 +319,7 @@ If your Documents folder is already inside OneDrive (common on many systems), th
 
 Then create your programming folder inside that location.
 
-### Create the folder and course subfolder
+### Creating a subfolder for one course or project
 
 Let's say that you are using the following path as your programming folder:
 
@@ -345,15 +347,13 @@ cd $HOME\Documents\programming\my-course
 
 Replace `my-course` with the actual name of your course.
 
-Use simple names without spaces (for example: `python101`, not `python 101`).
+Use simple names without spaces (for example: `python101`, not `python 101`). If you do use spaces, working with that directory becomes very annoying in the shell.
 
-Examples:
+Good examples:
 
 - `python101`
 - `intro-programming`
 - `datascience-course`
-
-> One note about **data files**. If you are going to use very large data files in a course, it might not be a good idea to put these in OneDrive or another location that is meant for automatic backup. But it would still be nice if your own code is backed up! In such a case, your teacher can provide you with suggestions on how to manage this.
 
 
 ## Create a virtual environment in the course folder
@@ -376,7 +376,7 @@ We distinguish a few options:
 
 In the next sections we provide instructions for each of these cases.
 
-### 1. Installing an empty virtual environemtn
+### 1. Installing an empty virtual environment
 
 From **inside** the course folder, run:
 
@@ -461,7 +461,7 @@ programming/
 Now that everything is installed, you can get into the routine of running your self-written Python programs.
 
 
-### Work from inside the course folder
+#### Once again: work from inside the course folder
 
 Each time you work on a course, you connect your shell to the course directory (folder). Only then will it pick up on the packages you installed.
 
@@ -512,10 +512,10 @@ uv run <command>
 Normally this would be a Python program that you wrote, like:
 
 ~~~bash
-uv run python hello.py
+uv run hello.py
 ~~~
 
-
+That's all! You can use `uv run` every time.
 
 
 ## Adding packages to your course environment
@@ -523,15 +523,6 @@ uv run python hello.py
 A **package** is a collection of Python code written by other people that you can reuse in your own programs.
 
 Instead of writing everything from scratch, you install packages that solve common problems.
-
-For example, packages can help you:
-
-- make web requests
-- work with data
-- create graphs
-- build applications
-
-### Common packages
 
 Here are some widely used packages you may encounter:
 
@@ -582,14 +573,16 @@ You can add more than one package:
 uv pip install numpy pandas matplotlib
 ~~~
 
-> In case your teacher provided a `requirements.txt` they already had some packages in mind that you need. Run this command once to install the packages into your environment:
-> 
-> ~~~bash
-> cd ~/programming/my-course
-> uv pip install -r requirements.txt
-> ~~~
+#### Adding packages from requirements
 
-### Adding packages to a project
+In case your teacher provided a `requirements.txt` they already had some packages in mind that you need. Run this command once to install the packages into your environment:
+
+~~~bash
+cd ~/programming/my-course
+uv pip install -r requirements.txt
+~~~
+
+#### Adding packages to a project
 
 If your course works with a `pyproject.toml` you need to add your package to the project using another command:
 
@@ -643,3 +636,5 @@ Do not:
 - install all packages globally
 - mix multiple courses in one folder
 - forget to move into the course folder before running commands
+
+This is the end of the tutorial. If you have any questions, do not hesitate to talk to other students, to your teaching assistant, the teacher, or the helpdesk.
