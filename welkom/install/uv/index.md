@@ -17,20 +17,21 @@ This guide shows how to:
 
 There are other ways to manage Python! But in this tutorial, we try to provide a consistent experience that is useful in a university setting.
 
-## Background on files and folders
+## Some background on files and folders
 
-If you are new to programming, it is important to understand how files and folders work.
+If you are new to programming, it is important to understand how files and folders work. All your documents are stored on your computer as a file. To help you organize a large number of files, you can use folders.
 
-- A **folder** (also called a directory) is a container that can hold files and other folders.
-- A **file** is a document or piece of data, such as a Python program (the name will end in `.py`), but it could also literally be a data file (for example, ending in `.csv`).
+- A **file** is a document or piece of data, such as a Python program (the name will end in `.py`), but it could also literally be a data file (for example, ending in `.csv`) or for example a Word document (ending in `.docx`).
 
-Think of it like this:
+- A **folder** (also called a directory) is a container, and it can hold files. But a directory can also contain other directories. This means that you can organize your files in a hierarchical structure.
+
+For example:
 
 - `programming/` → a main folder
 - `my-course/` → a folder inside `programming`
 - `hello.py` → a file inside `my-course`
 
-Example structure:
+Adding two other files, the structure may look like this:
 
 ~~~text
 programming/
@@ -40,27 +41,33 @@ programming/
     └── zac-data-2026.csv
 ~~~
 
-You will be creating **Python files** during the course. You probably start with an empty file, write Python code, save the file and then **Run** it. More on that later.
+The files that you will be mostly concerned with are **Python files**. You will often start with an empty (blank) file, write Python code, save the file and then **Run** it. But more on that later.
 
 ### Paths
 
-A **path** tells your computer where something is located. Your file is in a directory, which is in a directory, which may be in another directory.
+A **path** is a complete description of where some file can be found, including the names of all the directories it is contained in. Instead of a file, a path can also point to a directory.
 
-Most likely, you will be saving files in the `Documents` folder. Here are examples of the full paths when you make a programming directory inside a documents directory:
+For example, you probably have been saving files in the `Documents` folder on your computer. Here are examples of the full path to a folder inside your documents directory:
 
-- `/Users/isaiah/Documents/programming/my-course` (macOS/Linux)
-- `C:\Users\isaiah\Documents\programming\my-course` (Windows)
-- `C:\Users\isaiah\OneDrive\Documents\programming\my-course` (Windows with OneDrive)
+- `/Users/isaiah/Documents/UvA/intro` (macOS/Linux)
+- `C:\Users\isaiah\Documents\UvA\intro` (Windows)
+- `C:\Users\isaiah\OneDrive\Documents\UvA\intro` (Windows with OneDrive)
 
-Note: `~` (macOS/Linux) and `$HOME` (Windows PowerShell) both refer to your **home folder**.
-Your home folder is your personal space on the computer where your files live, separate from other people that might use the same computer.
+#### Home directory
+
+The paths above start with `/Users/isaiah/` and `C:\Users\isaiah`. These are the paths pointing to your "home directory". Your home directory is your personal space on the computer where your files live, separate from other people that might use the same computer.
+
+#### Shortcuts
+
+Because many of your files are in your home directory, you may use a shortcut to get to them. The shortcuts are `~` (macOS/Linux) and `$HOME` (Windows PowerShell).
 
 This means that often you can use slightly shorter paths to the same location:
 
-- `~/Documents/programming/my-course` (macOS/Linux)
-- `$HOME\Documents\programming\my-course` (Windows)
-- `$env:OneDrive\Documents\programming\my-course` (Windows with OneDrive)
+- `~/Documents/UvA/intro` (macOS/Linux)
+- `$HOME\Documents\UvA\intro` (Windows)
+- `$env:OneDrive\Documents\UvA\intro` (Windows with OneDrive)
 
+> That last one can be used when you are on Windows and use OneDrive. In that case the directory `$HOME\Documents` may be empty, and instead your real `Documents` directory is inside the `OneDrive` directory. This is because OneDrive can only manage file inside the `OneDrive` directory. It is also possible that you have files in both places. That's something you should fix.
 
 ## Working with your computer from a shell
 
@@ -89,7 +96,9 @@ Last login: ...
 username@macbook ~ %
 ~~~
 
-The `%` is the **prompt**. The prompt is the place where you type commands. It means the terminal is ready for a command.
+The `%` is the **prompt**. The prompt is the place where you type commands. It means the terminal is ready to take a command.
+
+Also, do you see that tiny `~` before the percent sign? This is the directory that the shell is attached to. In this case it's your home directory, like you learned earlier.
 
 #### Windows (PowerShell)
 
@@ -103,7 +112,9 @@ A window opens with text like this:
 PS C:\Users\YourName>
 ~~~
 
-The `>` is the **prompt**. The prompt is the place where you type commands. It means the terminal is ready for a command.
+The `>` is the **prompt**. The prompt is the place where you type commands. It means the terminal is ready to take a command.
+
+The shell also displays the path of the directory that it is attached to; in this case `C:\Users\YourName`.
 
 ### First steps in the terminal
 
@@ -123,7 +134,7 @@ Move into your Documents folder:
 cd ~/Documents
 ~~~
 
-"Moving into" here means connecting the shell to another directory. If you then issue `ls` again, you will get a listing of the files in *that* directory.
+"Moving into" here means attaching the shell to another directory. If you then issue `ls` again, you will get a listing of the files in *that* directory.
 
 #### Windows PowerShell
 
@@ -139,28 +150,27 @@ Move into your Documents folder:
 cd $HOME\Documents
 ~~~
 
-"Moving into" here means connecting the shell to another directory. If you then issue `dir` again, you will get a listing of the files in *that* directory.
+"Moving into" here means attaching the shell to another directory. If you then issue `dir` again, you will get a listing of the files in *that* directory.
 
 ### Moving between folders
 
-The emphasize a bit more: in the terminal, you move between folders using `cd` (change directory).
+This is such an important concept that we elaborate on it once more. You have previously seen that you can move into a different directory by typing the command `cd` in the shell (change directory).
 
-Example:
+You will be doing this very often, especially when you start the terminal again. The shell will always load attached to your home directory. That is *not* where you will be saving your files! So you need to move into the right folder before doing anything.
 
-~~~bash
-cd ~/programming/my-course
-~~~
-
-This step is important: most commands in this guide must be run **inside the correct folder**.
-
-For example, you might want to run a Python program called `mario.py` which is in the `my-course` directory.
+For example, you might want to run a Python program called `mario.py` which is in the `Programming/pyprog` directory in your standard `Documents` directory.
 
 ~~~bash
-cd ~/programming/my-course
+cd ~/Documents/Programming/pyprog
 uv run mario.py
 ~~~
 
-The second command, `uv run`, would not work if you did not `cd` into the `my-course` directory first!
+~~~powershell
+cd $HOME\Documents\Programming\pyprog
+uv run mario.py
+~~~
+
+The second command, `uv run`, would not work at all if you did not `cd` into the `pyprog` directory first.
 
 ### How the shell relates to normal computer use
 
@@ -196,7 +206,7 @@ Working in the shell do not replace your normal way of using the computer; you a
 - `venv` (for creating virtual environments)
 - separate Python installers
 
-Instead of learning multiple tools, you use **one tool (uv) for everything**. This has advantages and also disadvantages. But for now it keeps learning simple, and you can expand your knowledge later.
+Instead of learning multiple tools, you use **one tool (uv) for everything**. This has advantages, but also disadvantages. For now it keeps learning simple, and you can expand your knowledge later.
 
 ### Install it now
 
@@ -250,7 +260,7 @@ You can check which Python versions are available on your system with:
 uv python list
 ~~~
 
-Sometimes this will list a few older versions, as well. That is fine, we will make sure that Python 3.14 is used during your course work.
+Sometimes this will list a few older versions, as well. That is fine: in a later step, you will configure to use Python 3.14 during your course work.
 
 
 
@@ -323,17 +333,19 @@ Then create your programming folder inside that location.
 
 Let's say that you are using the following path as your programming folder:
 
-- macOS/Linux: `~/Documents/programming`
-- Windows: `$HOME\Documents\programming`
-- Windows OneDrive: `$env:OneDrive\Documents\programming`
+- macOS/Linux: `~/Documents/Programming`
+- Windows: `$HOME\Documents\Programming`
+- Windows OneDrive: `$env:OneDrive\Documents\Programming`
 
 Now it's time to create a course-specific subfolder.
 
 #### macOS and Linux
 
+`mkdir` means “make directory” (create a folder).
+
 ~~~bash
-mkdir -p ~/Documents/programming/my-course
-cd ~/Documents/programming/my-course
+mkdir -p ~/Documents/Programming/my-course
+cd ~/Documents/Programming/my-course
 ~~~
 
 #### Windows PowerShell
@@ -341,8 +353,8 @@ cd ~/Documents/programming/my-course
 `mkdir` means “make directory” (create a folder).
 
 ~~~powershell
-mkdir $HOME\Documents\programming\my-course
-cd $HOME\Documents\programming\my-course
+mkdir $HOME\Documents\Programming\my-course
+cd $HOME\Documents\Programming\my-course
 ~~~
 
 Replace `my-course` with the actual name of your course.
@@ -356,9 +368,9 @@ Good examples:
 - `datascience-course`
 
 
-## Create a virtual environment in the course folder
+## Create a virtual environment for the course
 
-A **virtual environment** is a folder that contains a Python setup just for this course or project.
+Now that you have a directory for the course, you should make a virtual environment inside it. A **virtual environment** contains a Python setup just for this course or project.
 
 Why this matters:
 
@@ -368,15 +380,17 @@ Why this matters:
 
 We distinguish a few options:
 
-1. Your course or project does not provide any configuration. In that case, you make an "empty" virtual environment for the course and you can install any packages you need.
+1. Your teacher may not provide any configuration. In that case, you make an "empty" virtual environment for the course and you can install any packages you need.
 
-2. Your project provides a `requirements.txt` file with a list of packages that are needed (often along with some other required files).
+2. Your teacher provides a `requirements.txt` file with a list of packages that are needed (often along with some other required files).
 
-3. Your course provides a `pyproject.toml`, again with a list of packages that are needed. This works a little bit differently.
+3. Your teacher provides a `pyproject.toml`, again with a list of packages that are needed. This works a little bit differently.
 
 In the next sections we provide instructions for each of these cases.
 
 ### 1. Installing an empty virtual environment
+
+> Follow these instructions only if you have no `requirements.txt` and no `pyproject.toml` from the course! If you have either of those, skip to the next steps.
 
 From **inside** the course folder, run:
 
@@ -386,7 +400,7 @@ uv venv --python 3.14
 
 Here, we have added the option `--python 3.14` to specify the version that we just installed. This is useful in case there are multiple Python versions on your computer (and there probably are).
 
-The command creates a `.venv` folder in the course directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
+The command creates a `.venv` folder in the course directory. Although it's important to keep it, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
 
 - do not edit files inside it manually
 - do not rename or move it
@@ -410,7 +424,7 @@ uv pip install -r requirements.txt
 
 This will read the requirements file and install all packages that are mentioned in it.
 
-Note that you now have a `.venv` folder in the course directory. Although it must be there, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
+Note that you now have a `.venv` folder in the course directory. Although it's important to keep it, no need to look at it: the `.venv` folder is managed automatically by `uv`. Therefore:
 
 - do not edit files inside it manually
 - do not rename or move it
@@ -435,7 +449,7 @@ Note that you now have a `.venv` folder in the course directory. Although it mus
 - do not rename or move it
 - do not delete it unless you want to recreate the environment
 
-### Confirm the environment exists
+### Before you continue: confirm that the environment exists
 
 After setting up the virtual enviroment, you should now have a folder structure like this:
 
@@ -489,7 +503,9 @@ cd $HOME\programming\my-course
 
 ## Run commands with `uv run`
 
-When you are inside the course folder, use `uv run` to execute Python and tools. This means you do **not** need to activate the virtual environment manually.
+When you are inside the course folder, use `uv run` to execute Python and tools.
+
+> This means you do **not** need to activate the virtual environment manually. We mention this because some students may have some experience in using virtual environments. Generally, these have been "activated" for use in the shell. But with `uv run`, we can avoid that for now. Try it!
 
 `uv run` makes sure that:
 
@@ -515,7 +531,7 @@ Normally this would be a Python program that you wrote, like:
 uv run hello.py
 ~~~
 
-That's all! You can use `uv run` every time.
+That's all! You can use `uv run` every time to run your programs.
 
 
 ## Adding packages to your course environment
