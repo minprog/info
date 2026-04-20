@@ -160,11 +160,13 @@ This step is important: most commands in this guide must be run **inside the cor
 
 ### Why this matters
 
+Programmers generally work in the shell a lot, because it helps them work better:
+
 - Commands are precise and repeatable
 - You can follow instructions exactly as written
-- Most programming tools are designed for shell use
+- Many programming tools are designed for shell use
 
-You do not replace your normal way of using the computer; you add the shell as a second way of working.
+Working in the shell do not replace your normal way of using the computer; you add the shell as a second way of working.
 
 
 
