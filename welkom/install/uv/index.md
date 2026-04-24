@@ -21,7 +21,7 @@ There are other ways to manage Python! But in this tutorial, we try to provide a
 
 If you are new to programming, it is important to understand how files and folders work. All your documents are stored on your computer as a file. To help you organize a large number of files, you can use folders.
 
-- A **file** is a document or piece of data, such as a Python program (the name will end in `.py`), but it could also literally be a data file (for example, ending in `.csv`) or for example a Word document (ending in `.docx`).
+- A **file** is a document or piece of data, such as a Python program (the name will end in `.py`), but it could also literally be a data file (for example, ending in `.csv`) or a Word document (ending in `.docx`).
 
 - A **folder** (also called a directory) is a container, and it can hold files. But a directory can also contain other directories. This means that you can organize your files in a hierarchical structure.
 
@@ -59,9 +59,9 @@ The paths above start with `/Users/isaiah/` and `C:\Users\isaiah`. These are the
 
 #### Shortcuts
 
-Because many of your files are in your home directory, you may use a shortcut to get to them. The shortcuts are `~` (macOS/Linux) and `$HOME` (Windows PowerShell).
+Because many of your files are in your home directory, there is a shortcut! Instead of the full path, you can use `~` (macOS/Linux) or `$HOME` (Windows PowerShell).
 
-This means that often you can use slightly shorter paths to the same location:
+This means that you can use slightly shorter paths to the same location:
 
 - `~/Documents/UvA/intro` (macOS/Linux)
 - `$HOME\Documents\UvA\intro` (Windows)
@@ -278,7 +278,7 @@ Your first task is to create a directory where all your **programming-related co
 
 Choosing the right location matters because you do not want to lose your work and you want it to be easy to find.
 
-> One note about **data files**. If you are going to use very large data files in a course, it might not be a good idea to put these in OneDrive or another location that is meant for automatic backup (this is what we suggest below). But it would still be nice if your own code is backed up! In such a case, your teacher can provide you with suggestions on how to manage this.
+> One note about **data files**. If you are going to use very large data files in a course, it might not be a good idea to put these in OneDrive, iCloud, SurfDrive or another location that is meant for automatic backup (this is what we suggest below). But it would still be nice if your own code is backed up! In such a case, your teacher can provide you with suggestions on how to manage this.
 
 #### macOS
 
