@@ -77,8 +77,17 @@
   color: var(--welkom-accent-dark);
 }
 
-#tutorial-slide h1, #tutorial-slide h2, #tutorial-slide h3 {
-    margin-top: 0;
+#tutorial-slide > div > h1:first-child,
+#tutorial-slide > div > h2:first-child,
+#tutorial-slide > div > h3:first-child,
+#tutorial-slide > div > h4:first-child {
+  font-size: 1.65rem;
+  border-bottom: 2px solid var(--welkom-rule);
+  padding-bottom: 0.25rem;
+  margin-top: 0;
+  color: var(--welkom-heading);
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 .welkom-theme h4 {

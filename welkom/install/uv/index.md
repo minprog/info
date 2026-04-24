@@ -1,6 +1,20 @@
 ---
 layout: welkom-tutorial
 title: Python setup with uv
+tutorial_questions:
+  os:
+    question: "What operating system are you using?"
+    choices:
+      mac: "macOS"
+      linux: "Linux"
+      windows: "Windows"
+  setup:
+    question: "What did your course provide?"
+    description: "If you don't know what we're asking, please read the previous section."
+    choices:
+      nothing: "Nothing (no config file)"
+      requirements: "A requirements.txt file"
+      pyproject: "A pyproject.toml file"
 ---
 
 * Auto-generated table of contents for this page
@@ -83,7 +97,7 @@ You access the shell through a program called a **terminal**.
 
 ### Opening the terminal
 
-#### macOS
+#### macOS [mac]
 
 1. Press `Cmd + Space` to open Spotlight search
 2. Type `Terminal`
@@ -100,7 +114,7 @@ The `%` is the **prompt**. The prompt is the place where you type commands. It m
 
 Also, do you see that tiny `~` before the percent sign? This is the directory that the shell is attached to. In this case it's your home directory, like you learned earlier.
 
-#### Windows (PowerShell)
+#### Windows (PowerShell) [windows]
 
 1. Press the Windows key
 2. Type `PowerShell` or `Windows Terminal`
@@ -120,7 +134,7 @@ The shell also displays the path of the directory that it is attached to; in thi
 
 You can try a few simple commands to look inside directories and see what files and directories are there:
 
-#### macOS/Linux
+#### macOS/Linux [mac/linux]
 
 Show a list of files in the current folder:
 
@@ -136,7 +150,7 @@ cd ~/Documents
 
 "Moving into" here means attaching the shell to another directory. If you then issue `ls` again, you will get a listing of the files in *that* directory.
 
-#### Windows PowerShell
+#### Windows PowerShell [windows]
 
 Show a list of files in the current folder:
 
@@ -160,10 +174,14 @@ You will be doing this very often, especially when you start the terminal again.
 
 For example, you might want to run a Python program called `mario.py` which is in the `Programming/pyprog` directory in your standard `Documents` directory.
 
+#### macOS and Linux [mac/linux]
+
 ~~~bash
 cd ~/Documents/Programming/pyprog
 uv run mario.py
 ~~~
+
+#### Windows [windows]
 
 ~~~powershell
 cd $HOME\Documents\Programming\pyprog
@@ -212,7 +230,7 @@ Instead of learning multiple tools, you use **one tool (uv) for everything**. Th
 
 Open a terminal and install it.
 
-#### macOS and Linux
+#### macOS and Linux [mac/linux]
 
 Run the following command from your terminal:
 
@@ -230,7 +248,7 @@ uv --version
 
 There could be errors! In that case ask your teacher.
 
-#### Windows
+#### Windows [windows]
 
 In PowerShell, run:
 
@@ -280,7 +298,7 @@ Choosing the right location matters because you do not want to lose your work an
 
 > One note about **data files**. If you are going to use very large data files in a course, it might not be a good idea to put these in OneDrive, iCloud, SurfDrive or another location that is meant for automatic backup (this is what we suggest below). But it would still be nice if your own code is backed up! In such a case, your teacher can provide you with suggestions on how to manage this.
 
-#### macOS
+#### macOS [mac/linux]
 
 Use your **Documents** folder:
 
@@ -297,7 +315,7 @@ So your programming folder becomes:
 
 - `~/Documents/programming`
 
-#### Windows
+#### Windows [windows]
 
 You have two good options:
 
@@ -339,7 +357,7 @@ Let's say that you are using the following path as your programming folder:
 
 Now it's time to create a course-specific subfolder.
 
-#### macOS and Linux
+#### macOS and Linux [mac/linux]
 
 `mkdir` means “make directory” (create a folder).
 
@@ -348,7 +366,7 @@ mkdir -p ~/Documents/Programming/my-course
 cd ~/Documents/Programming/my-course
 ~~~
 
-#### Windows PowerShell
+#### Windows PowerShell [windows]
 
 `mkdir` means “make directory” (create a folder).
 
@@ -388,7 +406,7 @@ We distinguish a few options:
 
 In the next sections we provide instructions for each of these cases.
 
-### 1. Installing an empty virtual environment
+### Installing an empty virtual environment [nothing]
 
 > Follow these instructions only if you have no `requirements.txt` and no `pyproject.toml` from the course! If you have either of those, skip to the next steps.
 
@@ -406,7 +424,7 @@ The command creates a `.venv` folder in the course directory. Although it's impo
 - do not rename or move it
 - do not delete it unless you want to recreate the environment
 
-### 2. Installing with `requirements.txt`
+### Installing with `requirements.txt` [requirements]
 
 From **inside** the course folder, run:
 
@@ -430,7 +448,7 @@ Note that you now have a `.venv` folder in the course directory. Although it's i
 - do not rename or move it
 - do not delete it unless you want to recreate the environment
 
-### 3. Installing with `pyproject.toml`
+### Installing with `pyproject.toml` [pyproject]
 
 You may have received a `zip` file for the course or just a single `pyproject.toml`. This file contains a list of the required packages. It can be used to automatically create a virtual environment.
 
@@ -589,7 +607,7 @@ You can add more than one package:
 uv pip install numpy pandas matplotlib
 ~~~
 
-#### Adding packages from requirements
+#### Adding packages from requirements [requirements]
 
 In case your teacher provided a `requirements.txt` they already had some packages in mind that you need. Run this command once to install the packages into your environment:
 
@@ -598,7 +616,7 @@ cd ~/programming/my-course
 uv pip install -r requirements.txt
 ~~~
 
-#### Adding packages to a project
+#### Adding packages to a project [pyproject]
 
 If your course works with a `pyproject.toml` you need to add your package to the project using another command:
 
@@ -624,7 +642,7 @@ For each new course:
 
 ### Example from start to finish
 
-#### macOS and Linux
+#### macOS and Linux [mac/linux]
 
 ~~~bash
 mkdir -p ~/programming/python101
@@ -634,7 +652,7 @@ uv pip install requests
 uv run python
 ~~~
 
-#### Windows PowerShell
+#### Windows PowerShell [windows]
 
 ~~~powershell
 mkdir $HOME\programming\python101

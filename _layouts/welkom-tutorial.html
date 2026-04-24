@@ -27,22 +27,152 @@ layout: default
   </nav>
 </div>
 
+{% if page.tutorial_questions %}
+<script>var TUTORIAL_QUESTIONS = {{ page.tutorial_questions | jsonify }};</script>
+{% endif %}
+
 <script>
 (function () {
+  var TQ = (typeof TUTORIAL_QUESTIONS !== 'undefined') ? TUTORIAL_QUESTIONS : {};
+
+  // Build tag → category map from question definitions
+  var TAG_CAT = {};
+  Object.keys(TQ).forEach(function (cat) {
+    Object.keys(TQ[cat].choices).forEach(function (tag) {
+      TAG_CAT[tag] = cat;
+    });
+  });
+
+  function getTagsFromText(text) {
+    var tags = [];
+    var matches = text.match(/\[[a-z][a-z0-9/]*\]/g) || [];
+    matches.forEach(function (m) {
+      m.slice(1, -1).split('/').forEach(function (t) { tags.push(t); });
+    });
+    return tags;
+  }
+
+  function stripTagsFromElement(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    nodes.forEach(function (textNode) {
+      textNode.nodeValue = textNode.nodeValue.replace(/\[[a-z][a-z0-9/]*\]/g, '').trimEnd();
+    });
+  }
+
   function buildSlides() {
     var content = document.querySelector('.welkom-content');
-    var slides = [], current = null;
+    var rawSlides = [], current = null, currentSubsection = null;
+    var firstCatIdx = {};
+
     Array.from(content.children).forEach(function (el) {
       if (el.id === 'markdown-toc' || el.classList.contains('tutorial-start-bar')) return;
-      if (el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3') {
+
+      var tagName = el.tagName;
+      var isMainHeading = tagName === 'H1' || tagName === 'H2' || tagName === 'H3';
+      var headingTags = (isMainHeading || tagName === 'H4') ? getTagsFromText(el.textContent) : [];
+      var isTaggedH4 = tagName === 'H4' && headingTags.length > 0;
+
+      if (isMainHeading) {
+        var cloned = el.cloneNode(true);
+        stripTagsFromElement(cloned);
         current = document.createElement('div');
-        current.appendChild(el.cloneNode(true));
-        slides.push(current);
+        currentSubsection = null;
+        headingTags.forEach(function (t) {
+          var cat = TAG_CAT[t];
+          if (!cat) return;
+          var existing = current.getAttribute('data-filter-' + cat);
+          current.setAttribute('data-filter-' + cat, existing ? existing + ' ' + t : t);
+          if (!(cat in firstCatIdx)) firstCatIdx[cat] = rawSlides.length;
+        });
+        current.appendChild(cloned);
+        rawSlides.push(current);
+      } else if (isTaggedH4 && current) {
+        // Tagged h4: sub-section container inside the current slide
+        currentSubsection = document.createElement('div');
+        currentSubsection.classList.add('filter-subsection');
+        headingTags.forEach(function (t) {
+          var cat = TAG_CAT[t];
+          if (!cat) return;
+          var existing = currentSubsection.getAttribute('data-filter-' + cat);
+          currentSubsection.setAttribute('data-filter-' + cat, existing ? existing + ' ' + t : t);
+          if (!(cat in firstCatIdx)) firstCatIdx[cat] = rawSlides.length - 1;
+        });
+        var cloned = el.cloneNode(true);
+        stripTagsFromElement(cloned);
+        currentSubsection.appendChild(cloned);
+        current.appendChild(currentSubsection);
       } else if (current) {
-        current.appendChild(el.cloneNode(true));
+        if (tagName === 'H4') currentSubsection = null; // untagged h4 ends subsection
+        (currentSubsection || current).appendChild(el.cloneNode(true));
       }
     });
-    return slides;
+
+    // Inject question slides before first filtered content of each category
+    // Process higher indices first so earlier indices remain valid
+    var cats = Object.keys(firstCatIdx).sort(function (a, b) {
+      return firstCatIdx[b] - firstCatIdx[a];
+    });
+    cats.forEach(function (cat) {
+      rawSlides.splice(firstCatIdx[cat], 0, makeQuestionSlide(cat));
+    });
+
+    return rawSlides;
+  }
+
+  function applyFiltersToSlide(el) {
+    el.querySelectorAll('.filter-subsection').forEach(function (sub) {
+      var visible = true;
+      Object.keys(TQ).forEach(function (cat) {
+        if (!choices[cat]) return;
+        var filter = sub.getAttribute('data-filter-' + cat);
+        if (!filter) return;
+        if (filter.split(' ').indexOf(choices[cat]) === -1) visible = false;
+      });
+      sub.style.display = visible ? '' : 'none';
+    });
+  }
+
+  function makeQuestionSlide(category) {
+    var q = TQ[category];
+    var div = document.createElement('div');
+    div.classList.add('tutorial-question-slide');
+    div.dataset.category = category;
+    var html = '<h2>' + q.question + '</h2>';
+    if (q.description) html += '<p class="tutorial-question-description">' + q.description + '</p>';
+    html += '<div class="tutorial-choices">';
+    Object.keys(q.choices).forEach(function (key) {
+      html += '<button class="tutorial-choice-btn" type="button" data-choice="' + key + '">' + q.choices[key] + '</button>';
+    });
+    html += '</div>';
+    div.innerHTML = html;
+    return div;
+  }
+
+  var choices = {};
+
+  function isVisible(slide) {
+    if (slide.classList.contains('tutorial-question-slide')) return true;
+    var cats = Object.keys(TQ);
+    for (var i = 0; i < cats.length; i++) {
+      var cat = cats[i];
+      if (!choices[cat]) continue;
+      var slideFilter = slide.getAttribute('data-filter-' + cat);
+      if (!slideFilter) continue;
+      if (slideFilter.split(' ').indexOf(choices[cat]) === -1) return false;
+    }
+    return true;
+  }
+
+  function nextVisible(from, dir) {
+    var i = from + dir;
+    while (i >= 0 && i < slides.length) {
+      if (isVisible(slides[i])) return i;
+      i += dir;
+    }
+    return -1;
   }
 
   var slides = [], idx = 0;
@@ -54,19 +184,53 @@ layout: default
   var closeBtn   = document.getElementById('tut-close');
   var startBtn   = document.getElementById('tutorial-start-btn');
 
+  function updateProgress() {
+    var visibleIdx = 0, visibleTotal = 0;
+    slides.forEach(function (s, i) {
+      if (isVisible(s)) {
+        visibleTotal++;
+        if (i <= idx) visibleIdx = visibleTotal;
+      }
+    });
+    progressEl.textContent = visibleIdx + ' / ' + visibleTotal;
+  }
+
   function showSlide(i) {
     idx = Math.max(0, Math.min(i, slides.length - 1));
+    var slide = slides[idx];
     slideEl.innerHTML = '';
-    slideEl.appendChild(slides[idx].cloneNode(true));
-    progressEl.textContent = (idx + 1) + ' / ' + slides.length;
-    prevBtn.disabled = (idx === 0);
-    nextBtn.disabled = (idx === slides.length - 1);
+    slideEl.appendChild(slide.cloneNode(true));
+
+    applyFiltersToSlide(slideEl);
+
+    if (slide.classList.contains('tutorial-question-slide')) {
+      var cat = slide.dataset.category;
+      slideEl.querySelectorAll('.tutorial-choice-btn').forEach(function (btn) {
+        if (choices[cat] === btn.dataset.choice) btn.classList.add('selected');
+        btn.addEventListener('click', function () {
+          choices[cat] = btn.dataset.choice;
+          slideEl.querySelectorAll('.tutorial-choice-btn').forEach(function (b) {
+            b.classList.toggle('selected', b === btn);
+          });
+          updateProgress();
+          setTimeout(function () {
+            var next = nextVisible(idx, 1);
+            if (next !== -1) showSlide(next);
+          }, 300);
+        });
+      });
+    }
+
+    updateProgress();
+    prevBtn.disabled = nextVisible(idx, -1) === -1;
+    nextBtn.disabled = nextVisible(idx, 1) === -1;
     slideEl.parentElement.scrollTop = 0;
   }
 
   function openOverlay() {
     slides = buildSlides();
     if (!slides.length) return;
+    idx = 0;
     showSlide(0);
     overlay.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -81,16 +245,64 @@ layout: default
 
   startBtn.addEventListener('click', openOverlay);
   closeBtn.addEventListener('click', closeOverlay);
-  prevBtn.addEventListener('click', function () { showSlide(idx - 1); });
-  nextBtn.addEventListener('click', function () { showSlide(idx + 1); });
+  prevBtn.addEventListener('click', function () {
+    var prev = nextVisible(idx, -1);
+    if (prev !== -1) showSlide(prev);
+  });
+  nextBtn.addEventListener('click', function () {
+    var next = nextVisible(idx, 1);
+    if (next !== -1) showSlide(next);
+  });
   document.addEventListener('keydown', function (e) {
     if (overlay.hidden) return;
     if (e.key === 'Escape') closeOverlay();
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showSlide(idx + 1);
-    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showSlide(idx - 1);
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      var next = nextVisible(idx, 1);
+      if (next !== -1) showSlide(next);
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      var prev = nextVisible(idx, -1);
+      if (prev !== -1) showSlide(prev);
+    }
   });
   overlay.addEventListener('click', function (e) {
     if (e.target === overlay) closeOverlay();
+  });
+
+  // Strip [tag] markers from TOC links
+  document.querySelectorAll('#markdown-toc a').forEach(function (a) {
+    var walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    nodes.forEach(function (textNode) {
+      textNode.nodeValue = textNode.nodeValue.replace(/\[[a-z][a-z0-9/]*\]/g, '').trimEnd();
+    });
+  });
+
+  // Wrap [tag] markers in headings with hidden spans for the page view
+  document.querySelectorAll('.welkom-content h1, .welkom-content h2, .welkom-content h3, .welkom-content h4').forEach(function (h) {
+    var walker = document.createTreeWalker(h, NodeFilter.SHOW_TEXT);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) nodes.push(node);
+    nodes.forEach(function (textNode) {
+      var text = textNode.nodeValue;
+      if (!/\[[a-z][a-z0-9/]*\]/.test(text)) return;
+      var frag = document.createDocumentFragment();
+      var re = /\[[a-z][a-z0-9/]*\]/g;
+      var lastIdx = 0, m;
+      while ((m = re.exec(text)) !== null) {
+        if (m.index > lastIdx) frag.appendChild(document.createTextNode(text.slice(lastIdx, m.index)));
+        var span = document.createElement('span');
+        span.className = 'filter-tag';
+        span.textContent = m[0];
+        frag.appendChild(span);
+        lastIdx = m.index + m[0].length;
+      }
+      if (lastIdx < text.length) frag.appendChild(document.createTextNode(text.slice(lastIdx)));
+      textNode.parentNode.replaceChild(frag, textNode);
+    });
   });
 })();
 </script>
