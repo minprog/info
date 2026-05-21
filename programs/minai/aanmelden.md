@@ -36,7 +36,8 @@
             </li>
             
             <h3>Aanmelding minor</h3>
-            <!--<p><strong>De centrale minoraanmelding is inmiddels gesloten. We accepteren wel nog late aanmeldingen voor het tweede semester van dit studiejaar via het onderstaande formulier.</strong></p>-->
+            <p><strong>De centrale minoraanmelding is inmiddels gesloten. We accepteren wel nog late aanmeldingen voor het eerste semester van aankomend studiejaar via het onderstaande formulier.</strong></p>
+            <!--
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
                     Meld je tussen <b>1 april en 6 mei</b> aan voor &eacute;&eacute;n
@@ -57,16 +58,15 @@
                     <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/Pages/ResponsePage.aspx?id=zcrxoIxhA0S5RXb7PWh05ZTDc7biyulCvpu4U-tarWtUMDMwTkc4VlU0NUtaQlVJRjM4TEdYVzRaNi4u" target="_blank"> Selectieformulier Minor AI</a>
                 </p>
             </li>
-            <!--
+            -->
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
-                    Vul het onderstaande formulier in om de selectieprocedure voor het tweede semester van dit studiejaar te starten. Wij accepteren hier nog aanmeldingen zolang we plaatsen beschikbaar hebben.
+                    Vul het onderstaande formulier in om de selectieprocedure voor het eerste semester van aankomend studiejaar te starten. Wij accepteren hier nog aanmeldingen zolang we plaatsen beschikbaar hebben.
                 </p>
                 <p class="">
-                    <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/e/ZFH9bEpUXW" target="_blank"> Selectieformulier Minor AI</a>
+                    <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/e/Sw28Xr5cpc" target="_blank"> Selectieformulier Minor AI</a>
                 </p>
             </li>
-            -->
             <li class="mt-3">
                 <p class="mb-5" style="font-size:1.2rem;">
                     Hou je studentenmail in de gaten voor het geval wij vragen hebben, 
@@ -74,7 +74,6 @@
                     periode, mail dan gerust naar <a href="mailto:help@proglab.nl">ai@proglab.nl</a>.
                 </p>
             </li>
-            
             <h3>Later regelen</h3>
             <li class="mt-3">
                 <p style="font-size:1.2rem;">
