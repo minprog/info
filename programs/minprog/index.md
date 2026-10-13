@@ -133,7 +133,10 @@ redirect_from:
         Als je de hele minor in één semester wil doen, dan kun je je gewoon voor alle vakken inschrijven. Wil je parttime doen, dan schrijf je je eerst in voor de vakken Programmeren 1 en 2, en in het volgende semester voor de overige vakken.
     </p>
 
-    <p class="my-5"><img src="{{ site.baseurl }}/assets/minprog/vakken@2x.png" style="width:100%"></p>
+    <div class="my-5 px-3 mx-auto" style="max-width:700px;">
+        {% include semester.html title="Semester 1 2026/2027" d1="31 aug—23 okt" d2="26 okt—18 dec" d3="4 jan—29 jan" %}
+        {% include semester.html title="Semester 2 2026/2027" d1="1 feb—26 mrt" d2="29 mrt—28 mei" d3="31 mei—25 jun" %}
+    </div>
 
     <p class="display-6 w-50 mx-auto">
          Let op: het laatste vak (Algoritmen en Heuristieken) is in alle gevallen een fulltime-vak waarbij je overdags geen andere vakken of werk kunt plannen. Dit geldt dus ook als je de vakken verspreidt over meerdere semesters.

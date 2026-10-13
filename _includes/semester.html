@@ -1,0 +1,19 @@
+{% comment %}
+  Shows the minor courses for one semester.
+  Parameters: title, d1, d2, d3 (the dates above the three columns).
+{% endcomment %}
+<div class="semester">
+    <h4 class="semester-title">{{ include.title }}</h4>
+    <div class="semester-dates">
+        <span>{{ include.d1 }}</span>
+        <span>{{ include.d2 }}</span>
+        <span>{{ include.d3 }}</span>
+    </div>
+    <div class="semester-grid">
+        <div><span><strong>Programmeren 1</strong><br>50621PRP6Y</span></div>
+        <div><span><strong>Programmeren 2</strong><br>50622PRP6Y</span></div>
+        <div class="semester-tall"><span><strong>Algoritmen en Heuristieken</strong><br>5062ALHE6Y</span></div>
+        <div><span><strong>Datarepresentaties, tools en technieken</strong> 5062DATT6Y</span></div>
+        <div><span><strong>Programmeerproject</strong><br>5062PRPR6Y</span></div>
+    </div>
+</div>
