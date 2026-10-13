@@ -187,7 +187,7 @@ redirect_from:
 
     <h3 class="mt-4 mb-3">Jaarindeling en startdata 2026&mdash;2027</h3>
     <p class="display-6">
-        Het eerste semester loopt van 3 september t/m 29 januari, en het tweede semester loopt van 1 februari t/m vrijdag 30 juni.
+        Het eerste semester loopt van 31 augustus t/m vrijdag 29 januari, en het tweede semester loopt van 1 februari t/m vrijdag 25 juni.
     </p>
 
         <ul class="text-left">
