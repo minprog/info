@@ -1,6 +1,6 @@
 <div class="rounded-lg py-5 min-vh-75 v-center text-center markered3">
     <div class="px-4">
-        <h2 class="display-3 text-center mb-4" style="line-height:1;">Aanmelden Minor Programmeren<span class="text-muted d-block" style="font-size:75%; line-height:1; margin-top:-0.15em;">voor de start in februari 2027</span></h2>
+        <h2 class="display-3 text-center mb-4" style="line-height:1;">Aanmelden Minor Programmeren<span class="text-muted d-block" style="font-size:75%; line-height:1; margin-top:-0.15em;">start februari 2027</span></h2>
         <ol class="w-50 mx-auto text-left">
             <h3>Voorbereiding</h3>
             <li class="mt-3">
