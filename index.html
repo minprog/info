@@ -16,7 +16,7 @@ redirect_from:
     <h1 class="display-2 text-light">Hello, world!</h1>
 </div>
 
-<div class="panel-bg panel-padded panel-content-75 text-light" style="background-color:#0E1F2B">
+<div class="panel-bg panel-padded panel-content-75 text-light" style="background: linear-gradient(160deg, #0E1F2B 0%, #1B2A5A 100%)">
     <div class="row">
         <div class="col">
             <p class="display-6 text-right">
@@ -45,16 +45,16 @@ redirect_from:
     </div>
 </div>
 
-<div class="panel-bg panel-padded panel-content-75 tedxt-light pb-5" style="background-color:white">
+<div class="panel-bg panel-padded panel-content-75 pb-5" style="background-color:#F6F7FB">
   <div class="row row-cols-1 row-cols-md-2">
 
   {% assign programs = site.programs | sort: "order" %}
   {% for course in programs %}
   <div class="col mb-4">
-      <div class="card mb-3 bg-warning border-0 h-100 position-relative" style="smin-height:30vw;">
+      <div class="card card-modern mb-3 h-100 position-relative">
           <div class="position-absolute top-0 start-100 translate-middle" style="right: 1rem!important; top: -0.5rem; translate(-50%,-50%)!important;">
           {% for tag in course.tags %}
-            <div class="badge bg-primary text-white p-2">
+            <div class="badge badge-modern">
             {{ tag }}
             </div>
           {% endfor %}
@@ -69,7 +69,7 @@ redirect_from:
               <p><small class="">{{ course.periode }}</small></p>
               {% endif %}
           </div>
-          <div class="card-footer border-0">
+          <div class="card-footer bg-transparent border-0">
               <a href="{{ course.info }}" class="card-link stretched-link">Meer informatie &rarr;</a>
           </div>
       </div>

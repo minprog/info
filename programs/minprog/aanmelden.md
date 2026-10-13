@@ -1,6 +1,6 @@
 <div class="rounded-lg py-5 min-vh-75 v-center text-center markered3">
     <div class="px-4">
-        <h2 class="display-3 text-center mb-4">Aanmelden Minor Programmeren</h2>
+        <h2 class="display-3 text-center mb-4" style="line-height:1;">Aanmelden Minor Programmeren<span class="text-muted d-block" style="font-size:75%; line-height:1; margin-top:-0.15em;">voor de start in februari 2027</span></h2>
         <ol class="w-50 mx-auto text-left">
             <h3>Voorbereiding</h3>
             <li class="mt-3">
@@ -9,7 +9,7 @@
                     examencommissie van je eigen opleiding. Anders kan het zijn 
                     dat je de minorvakken volgt maar niet kunt gebruiken 
                     voor je diploma. Binnen de UvA gaat een deel automatisch: check 
-                    daarvoor de toestemmingsmatrix van de <a href="https://www.uva.nl/minors">minoraanmelding</a>. Neem anders contact
+                    daarvoor de toestemmingsmatrix van de <a href="https://www.uva.nl/onderwijs/bachelor/minors/aanmelden-voor-een-minor/minors-stappenplan.html">minoraanmelding</a>. Neem anders contact
                     op met je studieadviseur of onderwijsbalie om dit te regelen.
                 </p>
                 <p>
@@ -49,7 +49,7 @@
             <!-- CENTRALE AANMELDING -->
             <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
-                    Op sommige momenten in het jaar is er een centrale aanmelding van UvA-minoren. Je kunt hieraan meedoen als deze open staat.Volg de instructies op de <a href="https://www.uva.nl/minors">UvA-minorsite</a>. Er vindt geen strenge selectie plaats, in principe word je gewoon geplaatst!
+                    Op sommige momenten in het jaar is er een centrale aanmelding van UvA-minoren. De eerstvolgende minoraanmelding is van <strong>14 oktober 10:00 tot 10 november 13:00</strong>. Volg de instructies op de <a href="https://www.uva.nl/onderwijs/bachelor/minors/aanmelden-voor-een-minor/minors-stappenplan.html">UvA-minorsite</a>. Er vindt geen strenge selectie plaats, in principe word je gewoon geplaatst!
                 </p>
                 <p>
                     Tip: als het formulier niet open staat kun je gewoon door naar de volgende stap.
@@ -94,7 +94,7 @@
                 </p>-->
                 <p style="font-size:1.2rem;">
                     Schrijf je definitief in voor de minorvakken.
-                    Dit kan tijdens de normale vakinschrijving van de UvA <strong>begin juni</strong>. Dit gaat via het systeem GLASS.
+                    Dit kan tijdens de normale vakinschrijving van de UvA <strong>van 30 november tot en met 7 december 2026, 13:00 uur</strong>. Dit gaat via het systeem GLASS.
                 </p>
                 <p class="">
                     <a class="btn btn-outline-dark btn-lg" href="https://glass.uva.nl/" target="_blank">Ga naar GLASS om je inschrijvingen te beheren</a>
