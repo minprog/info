@@ -36,8 +36,8 @@
             </li>
             
             <h3>Aanmelding minor</h3>
-            <!--<p><strong>De centrale minoraanmelding is inmiddels gesloten. We accepteren wel nog late aanmeldingen voor het eerste semester van aankomend studiejaar via het onderstaande formulier.</strong></p>-->
-            <li class="mt-3">
+            <p><strong>De centrale minoraanmelding is inmiddels gesloten. We accepteren wel nog late aanmeldingen voor het tweede semester van dit studiejaar via het onderstaande formulier.</strong></p>
+            <!--<li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
                     Meld je tussen <b>14 oktober en 10 november</b> aan voor &eacute;&eacute;n
                     of meer minoren via het aanmeldingsformulier. In verband met beperkte plekken voor het volledige programma vindt er selectie plaats op basis van voorkennis (niet al te veel), interesse en toewijding.
@@ -56,15 +56,15 @@
                 <p class="">
                     <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/Pages/ResponsePage.aspx?id=zcrxoIxhA0S5RXb7PWh05ZTDc7biyulCvpu4U-tarWtUQzE4VEw4MjdDUE4wWk1VTkdKTUM4UEtDVi4u" target="_blank"> Selectieformulier Minor AI</a>
                 </p>
-            </li>
-            <!--<li class="mt-3">
+            </li>-->
+            <li class="mt-3">
                 <p class="" style="font-size:1.2rem;">
                     Vul het onderstaande formulier in om de selectieprocedure voor het eerste semester van aankomend studiejaar te starten. Wij accepteren hier nog aanmeldingen zolang we plaatsen beschikbaar hebben.
                 </p>
                 <p class="">
-                    <a class="btn btn-outline-dark btn-lg" href="https://forms.office.com/e/Sw28Xr5cpc" target="_blank"> Selectieformulier Minor AI</a>
+                    <a class="btn btn-outline-dark btn-lg" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=zcrxoIxhA0S5RXb7PWh05ZTDc7biyulCvpu4U-tarWtUMk04MDRIMEU0SFFYUTNXUUpXWUdKVUM2WC4u" target="_blank"> Selectieformulier Minor AI</a>
                 </p>
-            </li>-->
+            </li>
             <li class="mt-3">
                 <p class="mb-5" style="font-size:1.2rem;">
                     Hou je studentenmail in de gaten voor het geval wij vragen hebben, 
@@ -89,7 +89,7 @@
                     bekend gemaakt kunnen worden. Voor fulltime geldt sowieso: elke dag aanwezig.
                 </p>
             </li>
-            <h3>Te laat?</h3>
+            <!--<h3>Te laat?</h3>
             <li class="mt-3">
                 <p style="font-size:1.2rem;">
                     Als je je niet hebt aangemeld voor de selectie of je bent te laat geweest
@@ -97,7 +97,7 @@
                     toegelaten tot de minor. Het kan wel zijn dat er nog plek is. 
                     Vanaf 23 november verschijnt hier informatie over eventuele verlate aanmelding.
                 </p>
-            </li>
+            </li>-->
         </ol>
     </div>
 </div>
